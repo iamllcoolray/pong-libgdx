@@ -5,16 +5,9 @@ import com.badlogic.gdx.Input;
 
 public class PlayerOne extends Paddle{
     public PlayerOne() {
-        super();
         x = 25;
     }
-
-    @Override
-    public void update() {
-        playerMovement();
-    }
-
-    private void playerMovement(){
+    public void movement(){
         if (Gdx.input.isKeyPressed(Input.Keys.W)){
             if (checkCollisionTop()){
                 y = Gdx.graphics.getHeight() - height;

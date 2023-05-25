@@ -40,8 +40,8 @@ public class PongGame extends ApplicationAdapter {
 		ball.update();
 
 		batch.begin();
-		font.draw(batch, Integer.toString(ball.playerOne.getScore()), (Gdx.graphics.getWidth() / 2) - 40, Gdx.graphics.getHeight() - 10);
-		font.draw(batch, Integer.toString(ball.playerTwo.getScore()), (Gdx.graphics.getWidth() / 2) + 20, Gdx.graphics.getHeight() - 10 );
+		font.draw(batch, Integer.toString(ball.getPlayerOneScore()), (Gdx.graphics.getWidth() / 2) - 40, Gdx.graphics.getHeight() - 10);
+		font.draw(batch, Integer.toString(ball.getPlayerTwoScore()), (Gdx.graphics.getWidth() / 2) + 20, Gdx.graphics.getHeight() - 10 );
 		batch.end();
 
 		shape.begin(ShapeRenderer.ShapeType.Filled);

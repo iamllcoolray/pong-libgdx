@@ -3,7 +3,7 @@ package com.game.pong;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 
-public class Paddle {
+public abstract class Paddle implements IMovement{
     int x, y, width, height, ySpeed, score;
 
     public Paddle(){
@@ -15,16 +15,62 @@ public class Paddle {
         this.score = 0;
     }
 
-    public void update(){
-
+    public int getX() {
+        return x;
     }
+
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    public void setY(int y) {
+        this.y = y;
+    }
+
+    public int getWidth() {
+        return width;
+    }
+
+    public void setWidth(int width) {
+        this.width = width;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+    public void setHeight(int height) {
+        this.height = height;
+    }
+
+    public int getySpeed() {
+        return ySpeed;
+    }
+
+    public void setySpeed(int ySpeed) {
+        this.ySpeed = ySpeed;
+    }
+
+    public int getScore() {
+        return score;
+    }
+
+    public void setScore(int score) {
+        this.score = score;
+    }
+
+    public void update(){
+        movement();
+    }
+
+    public abstract void movement();
 
     public void draw(ShapeRenderer shape){
         shape.rect(x, y, width, height);
-    }
-
-    public int getScore(){
-        return score;
     }
 
     protected boolean checkCollisionTop() {
