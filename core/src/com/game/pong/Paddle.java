@@ -9,7 +9,6 @@ public abstract class Paddle implements IMovement{
     public Paddle(){
         this.width = 25;
         this.height = 75;
-        this.x = 25;
         this.y = (Gdx.graphics.getHeight() / 2) - (width / 2);
         this.ySpeed = 300;
         this.score = 0;
